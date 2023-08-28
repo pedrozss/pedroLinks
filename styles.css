@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-color: white;
+    --bg-url: linear-gradient(121.28deg, #31BC00 0%, #000000 100%), linear-gradient(180deg, #5200FF 0%, #1A0050 100%), linear-gradient(341.1deg, #FF0000 7.52%, #1700A4 77.98%), radial-gradient(49.82% 80.51% at 49.82% 50%, #5A0069 0%, #FF3D00 100%), radial-gradient(50% 72.12% at 50% 50%, #EB00FF 0%, #110055 100%);
+    --bg-urll: color-dodge, overlay, difference, difference, normal;
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --hover-color: rgba(255, 255, 255, 0.2);
+    --switch-bg-url: url(./assets/moon-stars.svg);
+    --border-color: rgb(122, 0, 56);
+}
+
+.light {
+    --text-color: black;
+    --bg-url: radial-gradient(80.99% 100% at 50% 0%, #00FF0A 0%, #36008E 100%), radial-gradient(50% 123.47% at 50% 50%, #EFE7C8 0%, #36008E 100%), linear-gradient(301.28deg, #FF006B 0%, #48DD9E 100%), linear-gradient(294.84deg, #5A60E4 0%, #D30000 100%), linear-gradient(52.29deg, #000000 0%, #00FF85 100%), radial-gradient(100% 138.69% at 100% 0%, #0007A5 0%, #FF7A00 100%), radial-gradient(70.41% 100% at 50% 0%, #D5B300 0%, #2200AA 100%);
+    --bg-urll: screen, screen, lighten, overlay, lighten, difference, normal;
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --hover-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(./assets/sun.svg);
+    --border-color: rgb(236, 212, 229);
+}
+
+body {
+    background: var(--bg-url);
+    background-blend-mode: var(--bg-urll);
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover;
+
+}
+
+body * {
+    font-family: "Inter", sans-serif;
+    color: var(--text-color);
+    
+}
+
+#container {
+    width: 360px;
+    margin: 56px auto 0px;
+    padding: 0 24px;
+}
+
+#profile {
+    position: relative;
+    text-align: center;
+    padding: 24px;
+
+}
+
+#profile img{
+    position: relative;
+    display: flex;
+    width: 100px;
+    margin: auto;
+
+    z-index: 1;
+
+}
+
+.borderImg {
+    position: absolute;
+    right: 103px;
+    top: 21px;
+    background-image: linear-gradient(var(--border-color),var(--border-color));
+    width: 105px;
+    height: 105px;
+    animation: spinning82341 1.7s linear infinite;
+    text-align: center;
+    border-radius: 50px;
+    filter: blur(1px);
+    box-shadow: 0px -5px 20px 0px var(--border-color), 0px 5px 20px 0px var(--border-color);
+
+    z-index: 0;
+}
+
+@keyframes spinning82341 {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+#profile p {
+    text-align: center;
+    font-weight: 500px;
+    line-height: 25px;
+    margin-top: 8px;
+    padding: 8px;
+}
+
+#switch {
+    position: relative;
+    width: 65px;
+    margin: 4px auto;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+
+}
+
+.light #switch button {
+    right: 0;
+    left: initial;
+}
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 9999px;
+}
+
+#redes{
+    margin-top: 24px;
+}
+
+ul {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+ul li a{
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 10px;
+
+    text-decoration: none;
+    font-weight: 500;
+
+    transition: all 0.5s;
+
+}
+
+ul li a:hover {
+    background: var(--hover-color);
+    border: 1.5px solid var(--text-color);
+}
+
+li .content{
+    text-align: center;
+}
+
+#socials {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+
+    margin: 20px 0;
+
+
+    font-size: 28px;
+}
+
+#socials a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+
+    transition: all 0.5s;
+}
+
+#socials a:hover {
+    background: var(--hover-color);
+    padding: 16px;
+    border-radius: 80px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding: 24px 0;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+@media (min-width: 1000px) {
+    body {
+      height: 100vh;
+      overflow: hidden;
+    }
+}
