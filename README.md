@@ -32,6 +32,6 @@ O projeto é um agregador de links para usar como cartão de visitas online.
 
 Peguei como base o projeto do discover da RocketSeat e fui modificando conforme o meu gosto, alterando background e adicionando algumas animações.
 
-- <a href="https://pedrozss.github.io/pedroLinks/"> Acesse aqui o meu WebSite! </a>
+- <a href="https://pedrozss.github.io/pedroLinks/" _blank > Acesse aqui o meu WebSite! </a>
 
 
